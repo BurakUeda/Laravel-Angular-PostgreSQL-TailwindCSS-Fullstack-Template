@@ -2,6 +2,7 @@ services:
   laravel_backend:
     build:
       context: ./backend
+      dockerfile: ../Dockerfile.backend
     container_name: laravel_backend
     working_dir: /var/www
     volumes:
@@ -14,6 +15,7 @@ services:
   angular_frontend:
     build:
       context: ./frontend
+      dockerfile: ../Dockerfile.frontend
     container_name: angular_frontend
     volumes:
       - ./frontend:/app
