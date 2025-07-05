@@ -74,6 +74,30 @@ docker-compose exec angular_frontend npm install tailwindcss @tailwindcss/postcs
 ```css
 @import "tailwindcss";
 ```
+---
+### 6) Set up Your Database for Angular
+1. Edit `/backend/.env` file and enter your database details:
+```bash
+DB_CONNECTION=pgsql
+DB_HOST=postgres_db
+DB_PORT=5432
+DB_DATABASE=app_db # Same with the .env file in your root folder.
+DB_USERNAME=app_user # Same with the .env file in your root folder.
+DB_PASSWORD=supersecurepassword # Same with the .env file in your root folder.
+```
+2. Create initial tables using Laravel's `migration`. \
+Inside the `/backend` folder, run:
+```bash
+docker-compose exec laravel_backend php artisan migrate
+```
+3. If you're using any database management tool, such as [DBeaver](https://dbeaver.io/download/), here are the connection details:
+```bash
+Host: localhost
+Port: 5432
+Database: app_db # Same with the .env file in your root folder.
+Username:app_user # Same with the .env file in your root folder.
+Password:supersecurepassword # Same with the .env file in your root folder.
+```
 ### Once everything is done:
 - Open http://localhost:4200 to view the Angular app.
 - Use `docker ps` to check that all containers are running.
