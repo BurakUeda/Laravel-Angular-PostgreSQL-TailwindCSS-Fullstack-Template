@@ -75,7 +75,7 @@ docker-compose exec angular_frontend npm install tailwindcss @tailwindcss/postcs
 @import "tailwindcss";
 ```
 ---
-### 6) Set up Your Database for Angular
+### 6) Set up Your Database for Laravel
 1. Edit `/backend/.env` file and enter your database details:
 ```bash
 DB_CONNECTION=pgsql
